@@ -7,9 +7,6 @@ export const state = reactive({
   channel2: [""],
 });
 
-// "undefined" means the URL will be computed from the `window.location` object
-// const URL:any = process.env.NODE_ENV === "production" ? undefined : "http://localhost:3000/";
-
 export const socket = io("http://localhost:3000/");
 
 socket.on("connect", () => {
@@ -21,7 +18,6 @@ socket.on("disconnect", () => {
 });
 
 socket.on('newMessage', (channel:string, message:string) => {
-  // const index = Object.keys(state).indexOf(channel);
   if(channel === 'channel1'){
     state.channel1.push(message)
   }else{
