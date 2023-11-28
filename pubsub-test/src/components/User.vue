@@ -24,7 +24,7 @@
             HI
         </h1>
         <h4>
-            Connect status : {{ state.connected ? "Connected" : "Disconnected" }}
+            Connection status : {{ state.connected ? "Connected" : "Disconnected" }}
         </h4>
         <input type="text" v-model="name" id="input" placeholder="name"/>
         <input type="text" v-model="channel" placeholder="channel" />
